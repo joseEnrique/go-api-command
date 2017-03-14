@@ -11,6 +11,8 @@ type Route struct {
 
 type Routes []Route
 
+var initAPI = "/api/v1"
+
 var routes = Routes{
 	Route{
 		"Index",
@@ -35,5 +37,11 @@ var routes = Routes{
 		"GET",
 		"/todos/{todoId}",
 		Index,
+	},
+	Route{
+		"PostCommand",
+		"POST",
+		initAPI + "/command/create",
+		CommandExecuted,
 	},
 }
